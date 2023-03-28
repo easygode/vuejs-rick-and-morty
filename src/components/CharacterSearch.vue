@@ -1,24 +1,37 @@
 <script>
+import { store } from '../store';
 export default {
-    name: 'Search'
-}
+    name: 'Search',
+    data() {
+        return {
+            store
+        }
+    },
+    methods: {
+        //testSubmit(){ // ricerca nel figlio, la ricerca va però effettuata nell'elemento padre che ha accesso ai date dell'api
+        //$emit risolve il problema e trasmette dal figlio al genitore.
+            //console.log('modulo inviato');
+            //console.log(this.store.searchKey);
+            // }
+        }
+    }
 </script>
 
 <template>
     <div class="container">
-        <form>
+        <form @submit.prevent="$event => $emit('search')">
             <div class="row justify-content-center g-1">
             <div class="mb-3 col-12 col-sm-auto">
                 <label for="search-character" class="form-label d-none">Search Character</label>
-                <input type="text" class="form-control" id="search-character" placeholder="Search Character">
+                <input type="text" class="form-control" id="search-character" placeholder="Search Character" v-model="store.searchKey">
             </div>
             <div class="mb-3 col-12 col-sm-auto">
                 <label for="search-status" class="form-label d-none">Select Status</label>
-                <select class="form-select" id="search-status">
-                    <option selected>Select Status</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select class="form-select" id="search-status" v-model="store.searchStatus">
+                    <option selected value>Select Status</option>
+                    <option>alive</option>
+                    <option>dead</option>
+                    <option>unknown</option>
                 </select>
             </div>
             <div class="mb-3 col-12 col-sm-auto">

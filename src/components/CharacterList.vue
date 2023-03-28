@@ -21,7 +21,7 @@ import CharacterCard from './CharacterCard.vue';
 <template>
     <div class="container">
        <div class="row g-3">
-            <div class="col-12 col-sm-3" v-for="character in store.characters">
+            <div class="col-12 col-sm-3" v-for="character in store.characters" :key="character.id">
                 <CharacterCard :img="character.image" :name="character.name" :status="character.status" :species="character.species"  />
             </div>
        </div>

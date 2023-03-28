@@ -6,13 +6,19 @@ import CharacterList from './CharacterList.vue';
         components: {
             CharacterSearch,
             CharacterList
+        },
+        methods: {
+            handleSearch(){
+                console.log('ho ascoltato evento');
+                this.$emit('qualcosa');
+            }
         }
     }
 </script>
 
 <template>
     <main>
-        <CharacterSearch />
+        <CharacterSearch @search="handleSearch" />
         <CharacterList />
     </main>
 </template>
