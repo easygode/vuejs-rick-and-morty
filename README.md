@@ -1,8 +1,8 @@
-# Vue Template
+# Vue Rick and Morty
 
-Template di partenza per progetti Vue con option API
+API Project Rick ad Morty
 
-Per installare il progetto
+To install project
 - npm install
 - npm run dev
 

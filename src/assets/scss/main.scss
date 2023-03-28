@@ -1,8 +1,12 @@
 @use '_partial/reset' as *;
 @use '_partial/variables' as *;
 // Import all of Bootstrap's CSS
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "bootstrap/scss/bootstrap.scss";
 
 body {
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
+  }
+
+  h1 {
+    color: $primary;
   }
